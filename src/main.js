@@ -9,7 +9,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import API from './js/pixabay-api';
 import { renderImage } from './js/reneder-fanctions';
 
-let lightbox = new SimpleLightbox('.gallery>.gallery-item a', {
+let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
