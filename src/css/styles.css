@@ -85,12 +85,13 @@ button:hover {
 }
 
 .loader {
+  margin-left: 600px;
   width: 48px;
   height: 48px;
+  border: 5px solid;
+  border-color: #FF3D00 transparent;
   border-radius: 50%;
-  display: inline-block;
-  border-top: 3px solid #FFF;
-  border-right: 3px solid transparent;
+  display: none;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -103,17 +104,4 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.is-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }

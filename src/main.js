@@ -9,7 +9,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import API from './js/pixabay-api';
 import { renderImage } from './js/reneder-fanctions';
 
-const lightbox = new SimpleLightbox('.gallery-item a', {
+let lightbox = new SimpleLightbox('.gallery>.gallery-item a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
@@ -18,7 +18,7 @@ const lightbox = new SimpleLightbox('.gallery-item a', {
 const refs = {
   form: document.getElementById('form'),
   searchInput: document.getElementById('input'),
-  loader: document.getElementsByClassName('loader'),
+  loader: document.getElementById('loader'),
   gallery: document.getElementById('gallery'),
 };
 
@@ -28,6 +28,9 @@ refs.form.addEventListener('submit', onSubmit);
 //отримання запиту з інпуту і передаємо його у вигляді квері параметру на сервер
 function onSubmit(evt) {
   evt.preventDefault();
+
+  refs.loader.style.display = 'inline-block';
+
   const form = evt.currentTarget;
   const value = form.elements.input.value.trim();
 
@@ -54,11 +57,16 @@ function onSubmit(evt) {
       return renderImage(hits);
     })
     .then(updateMarkup)
-    .catch(onError);
+    .catch(onError)
+    .finally(() => {
+      form.reset();
+      refs.loader.style.display = 'none';
+    });
 }
 
 function updateMarkup(markup) {
   refs.gallery.innerHTML = markup;
+  lightbox.refresh();
 }
 
 // якщо негативна відповідь, інформувати користувача

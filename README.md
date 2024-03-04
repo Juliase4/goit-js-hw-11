@@ -111,34 +111,3 @@ Pages, у гілку `gh-pages`, щоразу, коли оновлюється �
 3.  Якщо всі кроки пройшли успішно, зібрана продакшн версія файлів проекту
     відправляється у гілку `gh-pages`. В іншому випадку, у лозі виконання
     скрипта буде вказано в чому проблема.
-
-         `<li class ='gallery-item'>
-         <a class="gallery-link" href="${largeImageURL}">
-             <img class="gallery-image"
-                 src="${webformatURL}"
-                 alt="${tags}"
-                 width="360"
-                 height="152"/>
-         </a>
-         <div class='info-block'>
-             <div class="info">
-                 <h3 class = "head-likes">Likes</h3>
-                 <p>${likes}</p>
-             </div>
-             <div class="info">
-                 <h3 class = "head-views">Views</h3>
-                 <p>${views}</p>
-             </div>
-             <div class="info">
-                 <h3 class = "head-comments">Comments</h3>
-                 <p>${comments}</p>
-             </div>
-             <div class="info">
-                 <h3 class = "head-downloads">Downloads</h3>
-                 <p>${downloads}</p>
-             </div>
-         </div>
-         </li>`
-
-
-
